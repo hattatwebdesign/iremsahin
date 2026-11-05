@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kombin Çarkı · İrem Şahin Woman</title>
+<meta name="description" content="Çarkı çevir, kazan, yeni sezonu keşfet. İrem Şahin Woman · Çorum">
+<meta name="theme-color" content="#F7F1E8">
+<link rel="canonical" href="https://irem-sahin-woman.hattat-web.de/kombin-carki.html">
+<meta property="og:title" content="Kombin Çarkı · İrem Şahin Woman">
+<meta property="og:url" content="https://irem-sahin-woman.hattat-web.de/kombin-carki.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,600&family=Jost:wght@400;500;600&family=Pinyon+Script&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#F7F1E8; --cream:#FBF7F1; --ink:#2B211A; --muted:#6B5D52;
+    --gold:#C9A45C; --gold-dark:#7A5C26; --script:#9E7A3C;
+    --red:#9E1B22; --navy:#1B2238; --champ:#E3CB9C; --sand:#F3E8D6; --line:#EADFCB;
+    --spin-ms:4000ms;
+  }
+  @media (prefers-reduced-motion: reduce){ :root{ --spin-ms:600ms; } }
+  *{box-sizing:border-box}
+  html,body{margin:0}
+  body{
+    min-height:100vh; display:flex; flex-direction:column; align-items:center;
+    overflow-x:hidden; /* gedrehtes Rad soll keine Querscroll-Leiste erzeugen */
+    background:var(--bg); color:var(--ink);
+    font-family:'Jost',system-ui,-apple-system,sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  .app{
+    width:100%; max-width:440px; flex:1;
+    display:flex; flex-direction:column; align-items:center; text-align:center;
+    padding:36px 20px 28px;
+  }
+  .demo{
+    align-self:flex-end; font-size:11px; font-weight:600; letter-spacing:.2em;
+    color:var(--gold-dark); border:1px solid var(--gold); border-radius:999px; padding:4px 10px;
+  }
+  .brand{margin-top:6px; font-family:'Pinyon Script',cursive; font-size:46px; line-height:1; color:var(--script)}
+  .sub-brand{margin-top:6px; font-size:12px; letter-spacing:.3em; color:var(--gold-dark)}
+  h1{margin:22px 0 0; font-family:'Cormorant Garamond',serif; font-weight:600; font-size:50px; line-height:1}
+  h1 em{color:var(--red)}
+  .lead{margin:10px 0 0; font-size:16px; color:var(--muted)}
+
+  .wheel-wrap{position:relative; width:min(320px,84vw); aspect-ratio:1/1; margin-top:32px}
+  .wheel{
+    width:100%; height:100%; border-radius:50%;
+    box-shadow:0 22px 44px rgba(43,33,26,.16);
+    transform:rotate(30deg);
+    transition:transform var(--spin-ms) cubic-bezier(.15,.7,.1,1);
+  }
+  .wheel svg{display:block; width:100%; height:100%}
+  .seg-red{fill:var(--red)} .seg-sand{fill:var(--sand)} .seg-champ{fill:var(--champ)}
+  .seg-red,.seg-sand,.seg-champ{stroke:var(--cream); stroke-width:2}
+  .lbl{font-family:'Jost',sans-serif; font-weight:600; text-anchor:middle}
+  .lbl-light{fill:#FFF8EF} .lbl-dark{fill:#3A2A1E}
+  .l1{font-size:15px} .l1-big{font-size:23px} .l2{font-size:11px; letter-spacing:.08em}
+  .pointer{
+    position:absolute; top:-14px; left:50%; transform:translateX(-50%);
+    width:34px; height:40px; filter:drop-shadow(0 3px 4px rgba(43,33,26,.28));
+  }
+
+  .btn{
+    margin-top:32px; width:100%; min-height:56px; border:0; border-radius:28px;
+    background:var(--red); color:#FFF8EF; cursor:pointer;
+    font:600 16px 'Jost',sans-serif; letter-spacing:.14em;
+    transition:transform .15s ease, opacity .2s ease;
+  }
+  .btn:active{transform:scale(.98)}
+  .btn:disabled{opacity:.72; cursor:default}
+  .btn:focus-visible,.small-btn:focus-visible,a:focus-visible{outline:3px solid var(--gold); outline-offset:3px}
+
+  .result{width:100%; margin-top:16px}
+  .hint{margin:0; font-size:14px; line-height:1.5; color:var(--muted)}
+  .card{
+    display:none; flex-direction:column; gap:10px; text-align:left;
+    background:#fff; border:1px solid var(--line); border-radius:18px; padding:16px 18px;
+    box-shadow:0 14px 30px rgba(43,33,26,.08);
+  }
+  .card.show{display:flex; animation:pop .45s cubic-bezier(.2,.9,.3,1.3)}
+  @keyframes pop{from{opacity:0; transform:translateY(8px) scale(.97)} to{opacity:1; transform:none}}
+  .eyebrow{font-size:12px; font-weight:600; letter-spacing:.2em; color:var(--gold-dark)}
+  .card-title{font-family:'Cormorant Garamond',serif; font-weight:600; font-size:30px; line-height:1.1}
+  .card-desc{font-size:14px; color:var(--muted); line-height:1.45}
+  .code-row{display:flex; align-items:center; gap:10px; flex-wrap:wrap}
+  .code{
+    font-weight:600; letter-spacing:.14em; font-size:16px;
+    border:1.5px dashed var(--gold); border-radius:10px; padding:9px 14px; background:var(--cream);
+  }
+  .actions{display:flex; gap:10px; flex-wrap:wrap}
+  .small-btn{
+    min-height:44px; padding:0 18px; border-radius:22px; cursor:pointer;
+    border:1px solid var(--ink); background:transparent; color:var(--ink);
+    font:500 14px 'Jost',sans-serif; text-decoration:none; display:inline-flex; align-items:center;
+  }
+  .small-btn.solid{background:var(--ink); color:#FBF7F1}
+  .rules{margin-top:auto; padding-top:22px; font-size:12px; color:var(--muted)}
+
+  footer{width:100%; background:var(--navy); color:#F7F1E8}
+  .foot{max-width:440px; margin:0 auto; padding:18px 20px calc(18px + env(safe-area-inset-bottom));
+        display:flex; align-items:center; justify-content:space-between; gap:12px}
+  .hn{display:flex; align-items:center; gap:10px; text-decoration:none; color:inherit}
+  .hn-name{font-family:'Cormorant Garamond',serif; font-weight:600; font-size:24px; line-height:1}
+  .hn-sub{display:block; margin-top:3px; font-size:9px; letter-spacing:.3em; color:var(--gold)}
+  .foot-links{display:flex; flex-direction:column; align-items:flex-end; gap:4px; font-size:13px}
+  .foot-links a{color:var(--gold)} .foot-links a:hover{color:#F7F1E8}
+  .foot-note{max-width:440px; margin:0 auto; padding:0 20px 14px; font-size:11px; color:#B9C0D0; text-align:center}
+
+  .confetti{position:fixed; inset:0; pointer-events:none; overflow:hidden; z-index:10}
+  .confetti i{position:absolute; top:-20px; width:9px; height:14px; border-radius:2px; animation:fall linear forwards}
+  @keyframes fall{to{transform:translate3d(var(--dx),110vh,0) rotate(var(--r)); opacity:.9}}
+  .sr-only{position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap}
+</style>
+</head>
+<body>
+
+<main class="app">
+  <span class="demo">DEMO</span>
+  <span class="brand">İrem Şahin</span>
+  <span class="sub-brand">WOMAN · ÇORUM</span>
+  <h1>Kombin <em>Çarkı</em></h1>
+  <p class="lead">Çevir, kazan, yeni sezonu keşfet.</p>
+
+  <div class="wheel-wrap">
+    <div class="wheel" id="wheel">
+      <svg viewBox="0 0 300 300" role="img" aria-label="Kombin Çarkı: altı ödül dilimi">
+        <path class="seg-red"   d="M150 150 L150 10 A140 140 0 0 1 271.24 80 Z"/>
+        <path class="seg-sand"  d="M150 150 L271.24 80 A140 140 0 0 1 271.24 220 Z"/>
+        <path class="seg-champ" d="M150 150 L271.24 220 A140 140 0 0 1 150 290 Z"/>
+        <path class="seg-red"   d="M150 150 L150 290 A140 140 0 0 1 28.76 220 Z"/>
+        <path class="seg-sand"  d="M150 150 L28.76 220 A140 140 0 0 1 28.76 80 Z"/>
+        <path class="seg-champ" d="M150 150 L28.76 80 A140 140 0 0 1 150 10 Z"/>
+        <g transform="rotate(30 150 150)"><text class="lbl lbl-light" x="150" y="56"><tspan x="150" class="l1-big">%10</tspan><tspan x="150" dy="17" class="l2">İNDİRİM</tspan></text></g>
+        <g transform="rotate(90 150 150)"><text class="lbl lbl-dark" x="150" y="56"><tspan x="150" class="l1">ÜCRETSİZ</tspan><tspan x="150" dy="17" class="l2">KARGO</tspan></text></g>
+        <g transform="rotate(150 150 150)"><text class="lbl lbl-dark" x="150" y="56"><tspan x="150" class="l1">HEDİYE</tspan><tspan x="150" dy="17" class="l2">AKSESUAR</tspan></text></g>
+        <g transform="rotate(210 150 150)"><text class="lbl lbl-light" x="150" y="56"><tspan x="150" class="l1-big">%15</tspan><tspan x="150" dy="17" class="l2">İNDİRİM</tspan></text></g>
+        <g transform="rotate(270 150 150)"><text class="lbl lbl-dark" x="150" y="56"><tspan x="150" class="l1">KOMBİN</tspan><tspan x="150" dy="17" class="l2">ÖNERİSİ</tspan></text></g>
+        <g transform="rotate(330 150 150)"><text class="lbl lbl-dark" x="150" y="56"><tspan x="150" class="l1">SÜRPRİZ</tspan><tspan x="150" dy="17" class="l2">HEDİYE</tspan></text></g>
+        <circle cx="150" cy="150" r="142" fill="none" stroke="#C9A45C" stroke-width="6"/>
+        <circle cx="150" cy="150" r="24" fill="#FBF7F1" stroke="#C9A45C" stroke-width="3"/>
+        <path transform="translate(138 138)" fill="#C9A45C" d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6L2.5 9.4l6.6-.8z"/>
+      </svg>
+    </div>
+    <svg class="pointer" viewBox="0 0 34 40" aria-hidden="true">
+      <path d="M17 37 L3 4 L31 4 Z" fill="#2B211A" stroke="#C9A45C" stroke-width="2" stroke-linejoin="round"/>
+    </svg>
+  </div>
+
+  <button class="btn" id="spinBtn" type="button">ÇARKI ÇEVİR</button>
+
+  <div class="result" aria-live="polite">
+    <p class="hint" id="hint">Kazandığın kod online siparişte ve mağazada geçerli.</p>
+    <div class="card" id="card">
+      <span class="eyebrow">TEBRİKLER!</span>
+      <span class="card-title" id="cardTitle"></span>
+      <span class="card-desc" id="cardDesc"></span>
+      <div class="code-row">
+        <span class="code" id="code"></span>
+        <button class="small-btn" id="copyBtn" type="button">Kodu kopyala</button>
+      </div>
+      <div class="actions">
+        <button class="small-btn solid" id="shareBtn" type="button">Hikâyede paylaş</button>
+        <a class="small-btn" href="index.html">Koleksiyona göz at</a>
+      </div>
+    </div>
+  </div>
+
+  <p class="rules">Günde 1 hak · kod online siparişte ve mağazada geçerli</p>
+</main>
+
+<footer>
+  <div class="foot">
+    <a class="hn" href="https://hattat-web.de" target="_blank" rel="noopener">
+      <svg width="32" height="32" viewBox="0 0 100 100" aria-hidden="true"><polygon points="24,14 40,14 36,86 20,86" fill="#F7F3EA"/><polygon points="64,14 80,14 76,86 60,86" fill="#F7F3EA"/><polygon points="50,31 54.5,45.5 69,50 54.5,54.5 50,69 45.5,54.5 31,50 45.5,45.5" fill="#C9973F"/></svg>
+      <span><span class="hn-name">Hatnova</span><span class="hn-sub">WEB &amp; CONSULTING</span></span>
+    </a>
+    <div class="foot-links">
+      <a href="https://hattat-web.de" target="_blank" rel="noopener">hattat-web.de</a>
+      <a href="https://www.instagram.com/hatnova_web/" target="_blank" rel="noopener">@hatnova_web</a>
+    </div>
+  </div>
+  <p class="foot-note">Bu sayfa İrem Şahin Woman için hazırlanmış bir demodur.</p>
+</footer>
+
+<div class="confetti" id="confetti" aria-hidden="true"></div>
+
+<script>
+(function () {
+  // Demo modunda sınırsız çevirme. Canlıya alırken false yapın (günde 1 hak).
+  var DEMO = true;
+
+  // Sıra çarktaki dilimlerle aynı (saat yönünde, üstten başlayarak).
+  var PRIZES = [
+    { title: '%10 İndirim',     code: 'IREM10',  desc: 'Yeni sezon ürünlerinde geçerli.' },
+    { title: 'Ücretsiz Kargo',  code: 'KARGO',   desc: 'Bir sonraki online siparişinde.' },
+    { title: 'Hediye Aksesuar', code: 'HEDIYE',  desc: 'Mağazadaki alışverişine küçük bir hediye.' },
+    { title: '%15 İndirim',     code: 'IREM15',  desc: 'Seçtiğin bir üründe geçerli.' },
+    { title: 'Kombin Önerisi',  code: 'KOMBIN',  desc: 'İrem’den sana özel bir kombin önerisi.' },
+    { title: 'Sürpriz Hediye',  code: 'SURPRIZ', desc: 'Mağazada seni küçük bir sürpriz bekliyor.' }
+  ];
+
+  var wheel = document.getElementById('wheel');
+  var btn = document.getElementById('spinBtn');
+  var hint = document.getElementById('hint');
+  var card = document.getElementById('card');
+  var cardTitle = document.getElementById('cardTitle');
+  var cardDesc = document.getElementById('cardDesc');
+  var codeEl = document.getElementById('code');
+  var copyBtn = document.getElementById('copyBtn');
+  var shareBtn = document.getElementById('shareBtn');
+  var confetti = document.getElementById('confetti');
+
+  var reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var SPIN_MS = reduced ? 600 : 4000;
+  var rot = 30;
+  var spinning = false;
+  var current = null;
+  var KEY = 'kombin-carki-son';
+
+  function today() { return new Date().toISOString().slice(0, 10); }
+  function usedToday() {
+    if (DEMO) return false;
+    try { return localStorage.getItem(KEY) === today(); } catch (e) { return false; }
+  }
+  function markUsed() {
+    try { localStorage.setItem(KEY, today()); } catch (e) {}
+  }
+
+  function lockForToday() {
+    btn.disabled = true;
+    btn.textContent = 'YARIN TEKRAR GEL';
+  }
+
+  function spin() {
+    if (spinning) return;
+    if (usedToday()) {
+      hint.textContent = 'Bugünkü hakkını kullandın. Yarın tekrar çevirebilirsin.';
+      lockForToday();
+      return;
+    }
+    spinning = true;
+    btn.disabled = true;
+    btn.textContent = 'DÖNÜYOR…';
+    card.classList.remove('show');
+    hint.style.display = '';
+    hint.textContent = 'Bol şans!';
+
+    var k = Math.floor(Math.random() * PRIZES.length);
+    var want = (330 - 60 * k + 360) % 360;
+    var delta = ((want - (rot % 360)) + 720) % 360;
+    rot = rot + (reduced ? 360 : 1800) + delta;
+    wheel.style.transform = 'rotate(' + rot + 'deg)';
+
+    setTimeout(function () { finish(PRIZES[k]); }, SPIN_MS + 100);
+  }
+
+  function finish(p) {
+    spinning = false;
+    current = p;
+    cardTitle.textContent = p.title + ' kazandın';
+    cardDesc.textContent = p.desc;
+    codeEl.textContent = p.code;
+    copyBtn.textContent = 'Kodu kopyala';
+    shareBtn.textContent = 'Hikâyede paylaş';
+    hint.style.display = 'none';
+    card.classList.add('show');
+    markUsed();
+    burst();
+    if (DEMO) {
+      btn.disabled = false;
+      btn.textContent = 'TEKRAR ÇEVİR';
+    } else {
+      lockForToday();
+    }
+  }
+
+  function copyText(text, onDone) {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(onDone, function () { fallbackCopy(text); onDone(); });
+    } else { fallbackCopy(text); onDone(); }
+  }
+  function fallbackCopy(text) {
+    var ta = document.createElement('textarea');
+    ta.value = text; ta.setAttribute('readonly', '');
+    ta.style.position = 'fixed'; ta.style.opacity = '0';
+    document.body.appendChild(ta); ta.select();
+    try { document.execCommand('copy'); } catch (e) {}
+    document.body.removeChild(ta);
+  }
+
+  copyBtn.addEventListener('click', function () {
+    if (!current) return;
+    copyText(current.code, function () { copyBtn.textContent = 'Kopyalandı'; });
+  });
+
+  shareBtn.addEventListener('click', function () {
+    if (!current) return;
+    var text = 'İrem Şahin Woman Kombin Çarkı’nda ' + current.title + ' kazandım! Sen de çevir:';
+    if (navigator.share) {
+      navigator.share({ title: 'Kombin Çarkı', text: text, url: location.href }).catch(function () {});
+    } else {
+      copyText(text + ' ' + location.href, function () { shareBtn.textContent = 'Link kopyalandı'; });
+    }
+  });
+
+  function burst() {
+    if (reduced) return;
+    var colors = ['#9E1B22', '#C9A45C', '#E3CB9C', '#14213D', '#FBF7F1'];
+    for (var i = 0; i < 46; i++) {
+      var c = document.createElement('i');
+      c.style.left = (Math.random() * 100) + 'vw';
+      c.style.background = colors[i % colors.length];
+      c.style.setProperty('--dx', ((Math.random() - 0.5) * 160) + 'px');
+      c.style.setProperty('--r', (Math.random() * 720 - 360) + 'deg');
+      c.style.animationDuration = (1.8 + Math.random() * 1.6) + 's';
+      c.style.animationDelay = (Math.random() * 0.3) + 's';
+      confetti.appendChild(c);
+    }
+    setTimeout(function () { while (confetti.firstChild) confetti.removeChild(confetti.firstChild); }, 4000);
+  }
+
+  btn.addEventListener('click', spin);
+  if (usedToday()) lockForToday();
+})();
+</script>
+</body>
+</html>

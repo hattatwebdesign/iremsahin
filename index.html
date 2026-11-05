@@ -1,0 +1,451 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Koleksiyon · İrem Şahin Woman</title>
+<meta name="description" content="İrem Şahin Woman · Çorum – koleksiyon. Siparişler WhatsApp üzerinden.">
+<meta name="theme-color" content="#F7F1E8">
+<link rel="canonical" href="https://irem-sahin-woman.hattat-web.de/">
+<meta property="og:title" content="Koleksiyon · İrem Şahin Woman">
+<meta property="og:url" content="https://irem-sahin-woman.hattat-web.de/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,600&family=Jost:wght@400;500;600&family=Pinyon+Script&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#F7F1E8; --cream:#FBF7F1; --ink:#2B211A; --muted:#6B5D52;
+    --gold:#C9A45C; --gold-dark:#7A5C26; --script:#9E7A3C;
+    --red:#9E1B22; --navy:#1B2238; --sand:#F3E8D6; --line:#EADFCB; --wa:#1F7A4D;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0}
+  body{background:var(--bg); color:var(--ink); font-family:'Jost',system-ui,-apple-system,sans-serif; -webkit-font-smoothing:antialiased; overflow-x:hidden}
+  [hidden]{display:none !important}
+  .wrap{max-width:1120px; margin:0 auto; padding:0 20px}
+  a{color:var(--gold-dark)}
+  button{font:inherit; color:inherit}
+  :focus-visible{outline:3px solid var(--gold); outline-offset:3px}
+
+  /* Kopf */
+  .top{text-align:center; padding-top:36px; padding-bottom:8px; display:flex; flex-direction:column; align-items:center}
+  .brand{font-family:'Pinyon Script',cursive; font-size:46px; line-height:1; color:var(--script)}
+  .sub-brand{margin-top:6px; font-size:12px; letter-spacing:.3em; color:var(--gold-dark)}
+  h1{margin:18px 0 0; font-family:'Cormorant Garamond',serif; font-weight:600; font-size:clamp(44px,9vw,64px); line-height:1}
+  .lead{max-width:520px; margin:10px 0 0; font-size:16px; line-height:1.5; color:var(--muted)}
+  .howto{max-width:520px; margin:6px 0 0; font-size:14px; color:var(--muted)}
+  .banner{display:flex; align-items:center; gap:14px; width:100%; max-width:520px; margin-top:22px; padding:14px 18px;
+          background:#fff; border:1px solid var(--line); border-radius:16px; color:var(--ink); text-decoration:none; text-align:left}
+  .banner strong{display:block; font-family:'Cormorant Garamond',serif; font-size:22px; line-height:1.1}
+  .banner small{display:block; font-size:14px; color:var(--muted)}
+  .banner .arrow{margin-left:auto; font-size:20px; color:var(--red)}
+  .demo-note{max-width:520px; margin:14px 0 0; padding:10px 14px; border:1px dashed var(--gold); border-radius:12px; font-size:13px; color:var(--gold-dark)}
+
+  /* Kategorien */
+  .chips{position:sticky; top:0; z-index:5; background:var(--bg); border-bottom:1px solid var(--line); margin-top:22px}
+  .chips-in{max-width:1120px; margin:0 auto; display:flex; gap:8px; overflow-x:auto; padding:12px 20px; scrollbar-width:none}
+  .chips-in::-webkit-scrollbar{display:none}
+  .chip{flex:0 0 auto; min-height:44px; padding:0 18px; border-radius:999px; border:1px solid var(--line); background:#fff; font-size:14px; font-weight:500; cursor:pointer; white-space:nowrap}
+  .chip[aria-pressed="true"]{background:var(--ink); color:#FBF7F1; border-color:var(--ink)}
+
+  /* Raster */
+  .grid{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px; padding:18px 0 130px}
+  @media (min-width:720px){ .grid{grid-template-columns:repeat(3,minmax(0,1fr)); gap:20px} }
+  @media (min-width:1000px){ .grid{grid-template-columns:repeat(4,minmax(0,1fr))} }
+  .card{display:flex; flex-direction:column; padding:0; text-align:left; cursor:pointer; background:#fff; border:1px solid var(--line); border-radius:16px; overflow:hidden; transition:transform .2s ease, box-shadow .2s ease}
+  .card:hover{transform:translateY(-2px); box-shadow:0 12px 26px rgba(43,33,26,.10)}
+  .ph{position:relative; aspect-ratio:4/5; background:var(--sand); width:100%}
+  .ph img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block}
+  .card.out .ph img{filter:grayscale(.55); opacity:.78}
+  .badge{position:absolute; top:10px; left:10px; padding:5px 9px; border-radius:999px; background:var(--red); color:#FFF8EF; font-size:11px; font-weight:600; letter-spacing:.12em}
+  .badge.dark{background:var(--ink)}
+  .badge.sample{left:auto; right:10px; background:rgba(251,247,241,.94); color:var(--gold-dark)}
+  .info{padding:12px 12px 14px; display:flex; flex-direction:column; gap:4px}
+  .name{font-size:15px; font-weight:500; line-height:1.3}
+  .price{font-size:15px; font-weight:600}
+  .price.ask{font-size:13px; font-weight:500; color:var(--muted)}
+  .empty{grid-column:1/-1; text-align:center; color:var(--muted); padding:48px 0}
+
+  /* Dialoge */
+  dialog{border:0; padding:0; width:100%; max-width:560px; max-height:92vh; margin:auto auto 0; border-radius:24px 24px 0 0; background:var(--cream); color:var(--ink); overflow:hidden}
+  dialog::backdrop{background:rgba(20,33,61,.5)}
+  @media (min-width:720px){ dialog{margin:auto; border-radius:24px} }
+  .sheet{display:flex; flex-direction:column; max-height:92vh; overflow-y:auto; position:relative}
+  .gal{position:relative; flex-shrink:0}
+  .gallery{display:flex; overflow-x:auto; scroll-snap-type:x mandatory; aspect-ratio:4/5; max-height:58vh; background:var(--sand); scrollbar-width:none}
+  .gallery::-webkit-scrollbar{display:none}
+  .gallery img{flex:0 0 100%; width:100%; height:100%; object-fit:cover; scroll-snap-align:start}
+  .count{position:absolute; bottom:12px; right:12px; padding:4px 10px; border-radius:999px; background:rgba(43,33,26,.72); color:#FBF7F1; font-size:12px}
+  .close{position:absolute; top:12px; right:12px; z-index:2; width:44px; height:44px; border-radius:50%; border:0; background:rgba(251,247,241,.94); cursor:pointer; display:flex; align-items:center; justify-content:center}
+  .close.plain{position:static; background:#fff; border:1px solid var(--line)}
+  .body{padding:20px 20px calc(24px + env(safe-area-inset-bottom)); display:flex; flex-direction:column; gap:12px}
+  .cat{font-size:12px; font-weight:600; letter-spacing:.2em; color:var(--gold-dark); text-transform:uppercase}
+  .body h2{margin:0; font-family:'Cormorant Garamond',serif; font-size:34px; font-weight:600; line-height:1.05}
+  .body .price{font-size:19px}
+  .desc{margin:0; font-size:15px; line-height:1.55; color:var(--muted); white-space:pre-line}
+  fieldset{border:0; margin:0; padding:0}
+  legend{font-size:14px; font-weight:600; margin-bottom:8px; padding:0}
+  .sizes{display:flex; flex-wrap:wrap; gap:8px}
+  .size{position:relative}
+  .size input{position:absolute; opacity:0; width:1px; height:1px}
+  .size span{display:inline-flex; align-items:center; justify-content:center; min-width:52px; min-height:44px; padding:0 14px; border:1px solid var(--line); border-radius:12px; background:#fff; font-weight:500; cursor:pointer}
+  .size input:checked + span{background:var(--ink); color:#FBF7F1; border-color:var(--ink)}
+  .size input:focus-visible + span{outline:3px solid var(--gold); outline-offset:2px}
+  .err{margin:0; font-size:14px; color:var(--red); font-weight:500}
+  .note{margin:0; font-size:13px; line-height:1.5; color:var(--muted)}
+  .btn{display:flex; align-items:center; justify-content:center; gap:10px; width:100%; min-height:54px; border:0; border-radius:27px; background:var(--red); color:#FFF8EF; font-size:16px; font-weight:600; letter-spacing:.04em; cursor:pointer; text-decoration:none}
+  .btn:disabled{opacity:.5; cursor:not-allowed}
+  .btn.ghost{background:transparent; color:var(--ink); border:1px solid var(--ink)}
+  .btn.wa{background:var(--wa); color:#fff}
+  .btn svg{flex-shrink:0}
+
+  /* Sepet */
+  .cartbar{position:fixed; left:50%; bottom:calc(16px + env(safe-area-inset-bottom)); transform:translateX(-50%); z-index:6;
+           display:flex; align-items:center; gap:12px; min-height:56px; padding:0 22px; border:0; border-radius:28px;
+           background:var(--ink); color:#FBF7F1; font-size:15px; cursor:pointer; box-shadow:0 14px 30px rgba(43,33,26,.28); white-space:nowrap}
+  .cartbar b{color:var(--gold)}
+  .cartbar.pulse{animation:pulse .5s ease}
+  @keyframes pulse{50%{transform:translateX(-50%) scale(1.06)}}
+  .chead{display:flex; align-items:center; justify-content:space-between; gap:12px; padding:18px 20px 0}
+  .chead h2{margin:0; font-family:'Cormorant Garamond',serif; font-size:32px; font-weight:600}
+  .items{display:flex; flex-direction:column; gap:12px}
+  .item{display:grid; grid-template-columns:56px minmax(0,1fr) auto; gap:12px; align-items:center; background:#fff; border:1px solid var(--line); border-radius:14px; padding:10px}
+  .item img{width:56px; height:70px; object-fit:cover; border-radius:8px; background:var(--sand)}
+  .item .t{font-size:14px; font-weight:500; line-height:1.3}
+  .item .m{font-size:13px; color:var(--muted)}
+  .qty{display:flex; align-items:center; gap:4px}
+  .qty button{width:44px; height:44px; border-radius:12px; border:1px solid var(--line); background:var(--cream); cursor:pointer; font-size:18px}
+  .qty span{min-width:22px; text-align:center; font-weight:600}
+  .total{display:flex; justify-content:space-between; font-size:17px; font-weight:600; padding:4px 2px}
+  .field{display:flex; flex-direction:column; gap:6px; font-size:14px; font-weight:500}
+  .field input{min-height:48px; padding:0 14px; border:1px solid var(--line); border-radius:12px; background:#fff; font:400 16px 'Jost',sans-serif; color:var(--ink)}
+
+  /* Fuß */
+  footer{background:var(--navy); color:#F7F1E8}
+  .foot{max-width:1120px; margin:0 auto; padding:22px 20px; display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:16px}
+  .store{display:flex; flex-direction:column; gap:4px; font-size:14px}
+  .store a,.foot-links a{color:var(--gold)}
+  .store a:hover,.foot-links a:hover{color:#F7F1E8}
+  .store strong{font-family:'Cormorant Garamond',serif; font-size:22px; color:#F7F1E8}
+  .hn{display:flex; align-items:center; gap:10px; color:inherit; text-decoration:none}
+  .hn-name{font-family:'Cormorant Garamond',serif; font-weight:600; font-size:22px; line-height:1}
+  .hn-sub{display:block; margin-top:3px; font-size:9px; letter-spacing:.3em; color:var(--gold)}
+  .made{font-size:12px; color:#B9C0D0}
+</style>
+</head>
+<body>
+
+<header class="top wrap">
+  <span class="brand">İrem Şahin</span>
+  <span class="sub-brand">WOMAN · ÇORUM</span>
+  <h1>Koleksiyon</h1>
+  <p class="lead" id="lead">Zamansız şıklığı yansıtan marka. Zarif tarz, güçlü duruş.</p>
+  <p class="howto">Ürünü seç, bedenini işaretle, siparişini WhatsApp'tan gönder.</p>
+  <a class="banner" href="kombin-carki.html">
+    <svg width="34" height="34" viewBox="0 0 24 24" aria-hidden="true"><path fill="#C9A45C" d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6L2.5 9.4l6.6-.8z"/></svg>
+    <span><strong>Kombin Çarkı</strong><small>Çarkı çevir, indirim kodunu kap.</small></span>
+    <span class="arrow" aria-hidden="true">→</span>
+  </a>
+  <p class="demo-note" id="demoNote" hidden>Örnek ürünler gösteriliyor. Kendi ürünlerinizi yönetim panelinden ekleyebilirsiniz.</p>
+</header>
+
+<nav class="chips" aria-label="Kategoriler"><div class="chips-in" id="chips"></div></nav>
+
+<main class="wrap"><div class="grid" id="grid"></div></main>
+
+<footer>
+  <div class="foot">
+    <div class="store" id="storeLinks"><strong id="shopName">İrem Şahin Woman</strong></div>
+    <div class="store">
+      <a class="hn" href="https://hattat-web.de" target="_blank" rel="noopener">
+        <svg width="30" height="30" viewBox="0 0 100 100" aria-hidden="true"><polygon points="24,14 40,14 36,86 20,86" fill="#F7F3EA"/><polygon points="64,14 80,14 76,86 60,86" fill="#F7F3EA"/><polygon points="50,31 54.5,45.5 69,50 54.5,54.5 50,69 45.5,54.5 31,50 45.5,45.5" fill="#C9973F"/></svg>
+        <span><span class="hn-name">Hatnova</span><span class="hn-sub">WEB &amp; CONSULTING</span></span>
+      </a>
+      <span class="made">Tasarım: <a href="https://www.instagram.com/hatnova_web/" target="_blank" rel="noopener">@hatnova_web</a></span>
+    </div>
+  </div>
+</footer>
+
+<button class="cartbar" id="cartBar" type="button" hidden></button>
+
+<dialog id="productDlg" aria-labelledby="pTitle"><div class="sheet" id="productSheet"></div></dialog>
+<dialog id="cartDlg" aria-labelledby="cTitle"><div class="sheet" id="cartSheet"></div></dialog>
+
+<script>
+(function () {
+  'use strict';
+
+  /* ---------- Örnek veriler (urunler.json henüz yoksa) ---------- */
+  var SHAPES = {
+    elbise: '<path fill="FG" d="M172 70h10l8 48q10 8 20 0l8-48h10l10 58q-6 42-2 72l64 230q-100 22-200 0l64-230q4-30-2-72z"/>',
+    bluz: '<path fill="FG" d="M150 110l32-14q18 22 36 0l32 14 68 76-30 28-30-28 4 184q-62 12-124 0l4-184-30 28-30-28z"/>',
+    kazak: '<path fill="FG" d="M152 104l28-10q20 16 40 0l28 10q42 14 52 56l20 200-30 6-28-176 2 182q-64 12-128 0l2-182-28 176-30-6 20-200q10-42 52-56z"/><path d="M138 352h126" stroke="#FBF7F1" stroke-opacity=".35" stroke-width="6"/>',
+    pantolon: '<path fill="FG" d="M148 90h104l10 30 20 310h-60l-20-240h-4l-20 240h-60l20-310z"/><path d="M148 112h104" stroke="#FBF7F1" stroke-opacity=".35" stroke-width="5"/>',
+    kaban: '<path fill="FG" d="M150 92l32-10 18 68 18-68 32 10q46 16 54 58l18 250-30 4-22-204 2 240h-144l2-240-22 204-30-4 18-250q8-42 54-58z"/><path d="M200 150v290" stroke="#FBF7F1" stroke-opacity=".4" stroke-width="3"/>',
+    canta: '<path d="M158 220q0-80 42-80t42 80" fill="none" stroke="FG" stroke-width="12"/><path fill="FG" d="M118 220h164l18 180q-100 14-200 0z"/>',
+    bos: '<path fill="FG" transform="translate(140 190) scale(5)" d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6L2.5 9.4l6.6-.8z"/>'
+  };
+  function ph(shape, bg, fg) {
+    var svg = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500"><rect width="400" height="500" fill="' + bg + '"/>' + SHAPES[shape].replace(/FG/g, fg) + '</svg>';
+    return 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svg);
+  }
+  var NO_IMG = ph('bos', '#F3E8D6', '#E3CB9C');
+  var CATS = [
+    { id: 'elbise', ad: 'Elbise' }, { id: 'bluz', ad: 'Bluz & Gömlek' }, { id: 'kazak-hirka', ad: 'Kazak & Hırka' },
+    { id: 'pantolon', ad: 'Pantolon' }, { id: 'dis-giyim', ad: 'Dış Giyim' }, { id: 'aksesuar', ad: 'Aksesuar' }
+  ];
+  var SAMPLE_DESC = 'Bu bir örnek üründür. Gerçek ürünler yönetim panelinden eklenir.';
+  var DEMO = {
+    ayarlar: { magaza: 'İrem Şahin Woman', whatsapp: '', instagram: 'iremsahin.woman', aciklama: 'Zamansız şıklığı yansıtan marka. Zarif tarz, güçlü duruş.' },
+    kategoriler: CATS,
+    urunler: [
+      { id: 'ornek-1', ad: 'Saten Midi Elbise', kategori: 'elbise', fiyat: '', bedenler: ['S', 'M', 'L'], aciklama: SAMPLE_DESC, resimler: [ph('elbise', '#F3E8D6', '#9E1B22')], yeni: true, stok: true },
+      { id: 'ornek-2', ad: 'Oversize Keten Gömlek', kategori: 'bluz', fiyat: '', bedenler: ['S', 'M', 'L', 'XL'], aciklama: SAMPLE_DESC, resimler: [ph('bluz', '#EFE6D8', '#7A5C26')], yeni: true, stok: true },
+      { id: 'ornek-3', ad: 'Örgü Kazak', kategori: 'kazak-hirka', fiyat: '', bedenler: ['Standart'], aciklama: SAMPLE_DESC, resimler: [ph('kazak', '#F3E8D6', '#14213D')], yeni: false, stok: true },
+      { id: 'ornek-4', ad: 'Kumaş Palazzo Pantolon', kategori: 'pantolon', fiyat: '', bedenler: ['36', '38', '40', '42'], aciklama: SAMPLE_DESC, resimler: [ph('pantolon', '#EFE6D8', '#2B211A')], yeni: false, stok: true },
+      { id: 'ornek-5', ad: 'Kaşe Kaban', kategori: 'dis-giyim', fiyat: '', bedenler: ['S', 'M', 'L'], aciklama: SAMPLE_DESC, resimler: [ph('kaban', '#F3E8D6', '#7A5C26')], yeni: false, stok: false },
+      { id: 'ornek-6', ad: 'Zincir Askılı Çanta', kategori: 'aksesuar', fiyat: '', bedenler: [], aciklama: SAMPLE_DESC, resimler: [ph('canta', '#EFE6D8', '#9E1B22')], yeni: true, stok: true }
+    ]
+  };
+
+  /* ---------- Yardımcılar ---------- */
+  var $ = function (id) { return document.getElementById(id); };
+  function el(tag, attrs, kids) {
+    var n = document.createElement(tag);
+    if (attrs) Object.keys(attrs).forEach(function (k) {
+      var v = attrs[k];
+      if (v == null || v === false) return;
+      if (k === 'class') n.className = v;
+      else if (k === 'text') n.textContent = v;
+      else if (k.indexOf('on') === 0) n.addEventListener(k.slice(2), v);
+      else n.setAttribute(k, v === true ? '' : v);
+    });
+    (kids || []).forEach(function (c) { if (c != null) n.appendChild(typeof c === 'string' ? document.createTextNode(c) : c); });
+    return n;
+  }
+  function icon(name, size) {
+    var paths = {
+      x: '<path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>',
+      wa: '<path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.6.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3a.5.5 0 0 0 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .1-1.3c0-.1-.2-.2-.4-.3z"/>',
+      bag: '<path d="M6 8h12l-1 12H7L6 8zm3 0V7a3 3 0 0 1 6 0v1" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>'
+    };
+    var s = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    s.setAttribute('viewBox', '0 0 24 24'); s.setAttribute('width', size || 22); s.setAttribute('height', size || 22);
+    s.setAttribute('aria-hidden', 'true'); s.innerHTML = paths[name];
+    return s;
+  }
+  function normalize(d) {
+    d = d && typeof d === 'object' ? d : {};
+    var a = d.ayarlar || {};
+    return {
+      ayarlar: { magaza: a.magaza || 'İrem Şahin Woman', whatsapp: a.whatsapp || '', instagram: a.instagram || '', aciklama: a.aciklama || '' },
+      kategoriler: Array.isArray(d.kategoriler) ? d.kategoriler.filter(function (c) { return c && c.id; }) : [],
+      urunler: Array.isArray(d.urunler) ? d.urunler.filter(function (p) { return p && p.id; }).map(function (p) {
+        return { id: String(p.id), ad: p.ad || '', kategori: p.kategori || '', fiyat: p.fiyat == null ? '' : String(p.fiyat),
+          bedenler: Array.isArray(p.bedenler) ? p.bedenler : [], aciklama: p.aciklama || '',
+          resimler: Array.isArray(p.resimler) ? p.resimler : [], yeni: !!p.yeni, stok: p.stok !== false };
+      }) : []
+    };
+  }
+  function priceText(p) {
+    var f = (p.fiyat || '').trim();
+    if (!f) return '';
+    return /₺|tl/i.test(f) ? f : f + ' ₺';
+  }
+  function priceNum(f) {
+    f = (f || '').replace(/[^\d.,]/g, '');
+    if (!f) return NaN;
+    if (f.indexOf(',') > -1) f = f.replace(/\./g, '').replace(',', '.');
+    return parseFloat(f);
+  }
+  function money(n) { return n.toLocaleString('tr-TR', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + ' ₺'; }
+  function catName(id) { var c = data.kategoriler.filter(function (k) { return k.id === id; })[0]; return c ? c.ad : ''; }
+  function findP(id) { return data.urunler.filter(function (p) { return p.id === id; })[0]; }
+  function cover(p) { return p.resimler[0] || NO_IMG; }
+  function waLink(text) {
+    var n = (data.ayarlar.whatsapp || '').replace(/\D/g, '');
+    return 'https://wa.me/' + n + '?text=' + encodeURIComponent(text);
+  }
+  function productUrl(p) { return location.href.split('#')[0] + '#urun-' + encodeURIComponent(p.id); }
+
+  /* ---------- Durum ---------- */
+  var data, demo = false, active = 'all', cart = [], current = null, chosen = null;
+  var CART_KEY = 'isw-sepet';
+  function loadCart() {
+    try { cart = JSON.parse(localStorage.getItem(CART_KEY) || '[]'); } catch (e) { cart = []; }
+    if (!Array.isArray(cart)) cart = [];
+    cart = cart.filter(function (c) { return c && findP(c.id) && c.adet > 0; });
+  }
+  function saveCart() { try { localStorage.setItem(CART_KEY, JSON.stringify(cart)); } catch (e) {} }
+
+  /* ---------- Kategoriler ve ürünler ---------- */
+  function renderChips() {
+    var box = $('chips'); box.textContent = '';
+    var used = data.kategoriler.filter(function (c) { return data.urunler.some(function (p) { return p.kategori === c.id; }); });
+    if (active !== 'all' && !used.some(function (c) { return c.id === active; })) active = 'all';
+    [{ id: 'all', ad: 'Tümü' }].concat(used).forEach(function (c) {
+      box.appendChild(el('button', { type: 'button', class: 'chip', 'aria-pressed': String(active === c.id), text: c.ad,
+        onclick: function () { active = c.id; renderChips(); renderGrid(); } }));
+    });
+  }
+  function renderGrid() {
+    var grid = $('grid'); grid.textContent = '';
+    var list = data.urunler.filter(function (p) { return active === 'all' || p.kategori === active; });
+    if (!list.length) {
+      grid.appendChild(el('p', { class: 'empty', text: data.urunler.length ? 'Bu kategoride henüz ürün yok.' : 'Yeni koleksiyon çok yakında burada.' }));
+      return;
+    }
+    list.forEach(function (p) {
+      var pr = priceText(p);
+      var badge = !p.stok ? el('span', { class: 'badge dark', text: 'TÜKENDİ' }) : (p.yeni ? el('span', { class: 'badge', text: 'YENİ' }) : null);
+      grid.appendChild(el('button', { type: 'button', class: 'card' + (p.stok ? '' : ' out'), onclick: function () { openProduct(p.id); } }, [
+        el('span', { class: 'ph' }, [ el('img', { src: cover(p), alt: p.ad, loading: 'lazy' }), badge, demo ? el('span', { class: 'badge sample', text: 'ÖRNEK' }) : null ]),
+        el('span', { class: 'info' }, [ el('span', { class: 'name', text: p.ad }), el('span', { class: pr ? 'price' : 'price ask', text: pr || 'Fiyat için yazın' }) ])
+      ]));
+    });
+  }
+
+  /* ---------- Ürün detayı ---------- */
+  function openProduct(id) {
+    var p = findP(id); if (!p) return;
+    current = p; chosen = p.bedenler.length === 1 ? p.bedenler[0] : null;
+    var sheet = $('productSheet'); sheet.textContent = '';
+    var imgs = p.resimler.length ? p.resimler : [NO_IMG];
+    var gallery = el('div', { class: 'gallery' }, imgs.map(function (src, i) { return el('img', { src: src, alt: p.ad + (imgs.length > 1 ? ' – ' + (i + 1) : '') }); }));
+    var count = imgs.length > 1 ? el('span', { class: 'count', text: '1 / ' + imgs.length }) : null;
+    if (count) gallery.addEventListener('scroll', function () { count.textContent = (Math.round(gallery.scrollLeft / gallery.clientWidth) + 1) + ' / ' + imgs.length; }, { passive: true });
+    sheet.appendChild(el('div', { class: 'gal' }, [ gallery, count,
+      el('button', { type: 'button', class: 'close', 'aria-label': 'Kapat', onclick: function () { $('productDlg').close(); } }, [icon('x')]) ]));
+
+    var err = el('p', { class: 'err', hidden: true });
+    var sizes = null;
+    if (p.bedenler.length) {
+      sizes = el('fieldset', {}, [ el('legend', { text: 'Beden' }), el('div', { class: 'sizes' }, p.bedenler.map(function (s) {
+        var inp = el('input', { type: 'radio', name: 'beden', value: s, onchange: function () { chosen = s; err.hidden = true; } });
+        if (chosen === s) inp.checked = true;
+        return el('label', { class: 'size' }, [inp, el('span', { text: s })]);
+      })) ]);
+    }
+    var add = el('button', { type: 'button', class: 'btn', disabled: !p.stok, onclick: function () {
+      if (p.bedenler.length && !chosen) { err.textContent = 'Lütfen bir beden seç.'; err.hidden = false; return; }
+      addToCart(p, chosen);
+      add.textContent = 'Sepete eklendi';
+      setTimeout(function () { $('productDlg').close(); }, 650);
+    } }, [icon('bag'), p.stok ? 'Sepete ekle' : 'Tükendi']);
+    var ask = el('a', { class: 'btn ghost', href: '#', onclick: function (e) {
+      e.preventDefault();
+      var t = (p.stok ? 'Merhaba, bu ürünle ilgileniyorum:\n' : 'Merhaba, bu ürün tekrar gelince haber verir misiniz?\n') +
+        p.ad + (chosen ? ' · Beden: ' + chosen : '') + (priceText(p) ? ' · ' + priceText(p) : '') + '\n' + productUrl(p);
+      window.open(waLink(t), '_blank', 'noopener');
+    } }, [icon('wa'), p.stok ? "WhatsApp'tan sor" : 'Gelince haber ver']);
+
+    var pr = priceText(p);
+    sheet.appendChild(el('div', { class: 'body' }, [
+      catName(p.kategori) ? el('span', { class: 'cat', text: catName(p.kategori) }) : null,
+      el('h2', { id: 'pTitle', text: p.ad }),
+      el('span', { class: pr ? 'price' : 'price ask', text: pr || 'Fiyat bilgisi için WhatsApp’tan yazabilirsin.' }),
+      p.aciklama ? el('p', { class: 'desc', text: p.aciklama }) : null,
+      sizes, err, add, ask,
+      !p.stok ? el('p', { class: 'note', text: 'Bu ürün şu an tükendi. Tekrar geldiğinde haber almak için WhatsApp’tan yazabilirsin.' }) : null
+    ]));
+    var dlg = $('productDlg');
+    if (!dlg.open) dlg.showModal();
+    sheet.scrollTop = 0;
+    try { history.replaceState(null, '', '#urun-' + encodeURIComponent(p.id)); } catch (e) {}
+  }
+
+  /* ---------- Sepet ---------- */
+  function addToCart(p, beden) {
+    var hit = cart.filter(function (c) { return c.id === p.id && c.beden === (beden || ''); })[0];
+    if (hit) hit.adet++; else cart.push({ id: p.id, beden: beden || '', adet: 1 });
+    saveCart(); updateBar(true);
+  }
+  function cartCount() { return cart.reduce(function (s, c) { return s + c.adet; }, 0); }
+  function updateBar(pulse) {
+    var bar = $('cartBar'), n = cartCount();
+    bar.hidden = n === 0;
+    bar.textContent = '';
+    bar.appendChild(icon('bag'));
+    bar.appendChild(document.createTextNode('Sepetim · ' + n + ' ürün '));
+    bar.appendChild(el('b', { text: 'Siparişi gönder' }));
+    if (pulse) { bar.classList.remove('pulse'); void bar.offsetWidth; bar.classList.add('pulse'); }
+  }
+  function openCart() {
+    var sheet = $('cartSheet'); sheet.textContent = '';
+    sheet.appendChild(el('div', { class: 'chead' }, [ el('h2', { id: 'cTitle', text: 'Sepetim' }),
+      el('button', { type: 'button', class: 'close plain', 'aria-label': 'Kapat', onclick: function () { $('cartDlg').close(); } }, [icon('x')]) ]));
+    var body = el('div', { class: 'body' });
+    if (!cart.length) {
+      body.appendChild(el('p', { class: 'note', text: 'Sepetin boş.' }));
+    } else {
+      body.appendChild(el('div', { class: 'items' }, cart.map(function (c, i) {
+        var p = findP(c.id);
+        return el('div', { class: 'item' }, [
+          el('img', { src: cover(p), alt: '' }),
+          el('div', {}, [ el('div', { class: 't', text: p.ad }),
+            el('div', { class: 'm', text: [c.beden ? 'Beden: ' + c.beden : '', priceText(p)].filter(Boolean).join(' · ') }) ]),
+          el('div', { class: 'qty' }, [
+            el('button', { type: 'button', 'aria-label': p.ad + ' adedini azalt', text: '−', onclick: function () { c.adet--; if (c.adet <= 0) cart.splice(i, 1); saveCart(); updateBar(); openCart(); } }),
+            el('span', { text: String(c.adet) }),
+            el('button', { type: 'button', 'aria-label': p.ad + ' adedini artır', text: '+', onclick: function () { c.adet++; saveCart(); updateBar(); openCart(); } })
+          ])
+        ]);
+      })));
+      var nums = cart.map(function (c) { return priceNum(findP(c.id).fiyat) * c.adet; });
+      var allPriced = nums.every(function (n) { return !isNaN(n); });
+      if (allPriced) body.appendChild(el('div', { class: 'total' }, [ el('span', { text: 'Toplam' }), el('span', { text: money(nums.reduce(function (a, b) { return a + b; }, 0)) }) ]));
+      var name = el('input', { id: 'oName', autocomplete: 'name' });
+      var code = el('input', { id: 'oCode', autocapitalize: 'characters', placeholder: 'ör. IREM15' });
+      body.appendChild(el('label', { class: 'field' }, ['Adın (isteğe bağlı)', name]));
+      body.appendChild(el('label', { class: 'field' }, ['Kombin Çarkı kodu (isteğe bağlı)', code]));
+      body.appendChild(el('a', { class: 'btn wa', href: '#', onclick: function (e) {
+        e.preventDefault();
+        var lines = cart.map(function (c, i) {
+          var p = findP(c.id);
+          return (i + 1) + ') ' + p.ad + (c.beden ? ' · Beden: ' + c.beden : '') + ' · Adet: ' + c.adet + (priceText(p) ? ' · ' + priceText(p) : '');
+        });
+        var t = 'Merhaba, ' + data.ayarlar.magaza + ' sitesinden sipariş vermek istiyorum:\n\n' + lines.join('\n');
+        if (allPriced) t += '\n\nToplam: ' + money(nums.reduce(function (a, b) { return a + b; }, 0));
+        if (code.value.trim()) t += '\nİndirim kodu: ' + code.value.trim().toUpperCase();
+        if (name.value.trim()) t += '\nAd: ' + name.value.trim();
+        t += '\n\nTeşekkürler!';
+        window.open(waLink(t), '_blank', 'noopener');
+      } }, [icon('wa'), 'WhatsApp ile sipariş ver']));
+      body.appendChild(el('p', { class: 'note', text: 'Siparişin WhatsApp üzerinden mağazaya iletilir. Ödeme ve teslimat orada konuşulur.' }));
+    }
+    sheet.appendChild(body);
+    var dlg = $('cartDlg');
+    if (!dlg.open) dlg.showModal();
+  }
+
+  /* ---------- Başlat ---------- */
+  function init() {
+    var a = data.ayarlar;
+    if (a.aciklama) $('lead').textContent = a.aciklama;
+    $('shopName').textContent = a.magaza;
+    document.title = 'Koleksiyon · ' + a.magaza;
+    $('demoNote').hidden = !demo;
+    var links = $('storeLinks');
+    if (a.instagram) links.appendChild(el('a', { href: 'https://www.instagram.com/' + encodeURIComponent(a.instagram.replace(/^@/, '')) + '/', target: '_blank', rel: 'noopener', text: '@' + a.instagram.replace(/^@/, '') }));
+    if (a.whatsapp) links.appendChild(el('a', { href: waLink('Merhaba!'), target: '_blank', rel: 'noopener', text: 'WhatsApp' }));
+    renderChips(); renderGrid(); loadCart(); updateBar();
+    var m = location.hash.match(/^#urun-(.+)$/);
+    if (m) openProduct(decodeURIComponent(m[1]));
+  }
+  [$('productDlg'), $('cartDlg')].forEach(function (d) {
+    d.addEventListener('click', function (e) { if (e.target === d) d.close(); });
+  });
+  $('productDlg').addEventListener('close', function () {
+    try { history.replaceState(null, '', location.pathname + location.search); } catch (e) {}
+  });
+  $('cartBar').addEventListener('click', openCart);
+
+  fetch('urunler.json?v=' + Date.now(), { cache: 'no-store' })
+    .then(function (r) { if (!r.ok) throw new Error('yok'); return r.json(); })
+    .then(function (d) { data = normalize(d); demo = false; })
+    .catch(function () { data = normalize(DEMO); demo = true; })
+    .then(init);
+})();
+</script>
+</body>
+</html>
